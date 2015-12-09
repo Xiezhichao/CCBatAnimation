@@ -15,3 +15,9 @@
     [[CCSBatAnimation shareInstance] addBatAnimation:self.view andCount:20];
     
 ```
+
+# explain
+原理很简单：
+* 弄一些随机数。
+* 利用`UIImageView`自带的`animationImages`属性，设置三张图片循环播放。
+* 然后使用`CAKeyframeAnimation`路径动画
