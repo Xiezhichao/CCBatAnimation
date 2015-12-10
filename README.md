@@ -8,11 +8,11 @@
 ```
     // OC
     #import "CCBatAnimation.h
-    [[CCBatAnimation shareInstance] addBatAnimation:self.view withCount:20];
+    [CCBatAnimation addBatAnimation:self.view withCount:20];
     
     // SWift
     #import "Demo-Swift.h"
-    [[CCSBatAnimation shareInstance] addBatAnimation:self.view andCount:20];
+    [CCSBatAnimation addBatAnimation:self.view andCount:20];
     
 ```
 
