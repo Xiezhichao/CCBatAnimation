@@ -11,9 +11,7 @@
 
 @interface CCBatAnimation : NSObject
 
-+ (instancetype)shareInstance;
-
 /** 增加蝙蝠动画：加在哪个view，加多少数量 */
-- (void)addBatAnimation:(UIView *)tempView withCount:(NSInteger)count;
++ (void)addBatAnimation:(UIView *)tempView withCount:(NSInteger)count;
 
 @end

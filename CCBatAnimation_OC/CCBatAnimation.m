@@ -10,18 +10,8 @@
 
 @implementation CCBatAnimation
 
-// 单例
-+ (instancetype)shareInstance {
-    static CCBatAnimation *batAnimation = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        batAnimation = [CCBatAnimation new];
-    });
-    return batAnimation;
-}
-
 /** 增加蝙蝠动画：加在哪个view，加多少数量 */
-- (void)addBatAnimation:(UIView *)tempView withCount:(NSInteger)count {
++ (void)addBatAnimation:(UIView *)tempView withCount:(NSInteger)count {
     
     UIImage *image1 = [UIImage imageNamed:@"cc_bat_bianfu1"];
     UIImage *image2 = [UIImage imageNamed:@"cc_bat_bianfu2"];
@@ -63,7 +53,6 @@
         CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
         keyAnimation.values   = @[value1,value2];
         keyAnimation.duration = time;
-        keyAnimation.delegate = self;
         keyAnimation.removedOnCompletion = NO;
         [batImageView.layer addAnimation:keyAnimation forKey:nil];
         [CATransaction commit];

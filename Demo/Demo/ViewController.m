@@ -15,10 +15,10 @@
 - (IBAction)startAnimation:(id)sender {
     
     // OC
-    [[CCBatAnimation shareInstance] addBatAnimation:self.view withCount:20];
+    [CCBatAnimation addBatAnimation:self.view withCount:5];
     
     // Swift
-    //[[CCSBatAnimation shareInstance] addBatAnimation:self.view andCount:20];
+    //[CCSBatAnimation addBatAnimation:self.view andCount:5];
 }
 
 @end

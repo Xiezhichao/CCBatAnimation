@@ -9,16 +9,10 @@
 import Foundation
 import UIKit
 
-let _batAnimation = CCSBatAnimation()
 class CCSBatAnimation: NSObject {
     
-    // 单例
-    class var shareInstance: CCSBatAnimation {
-        return _batAnimation;
-    }
-    
     /** 增加蝙蝠动画：加在哪个view，加多少数量 */
-    internal func addBatAnimation(tempView: UIView, andCount count: Int) -> Void {
+    class func addBatAnimation(tempView: UIView, andCount count: Int) -> Void {
         
         let image1 = UIImage(named: "cc_bat_bianfu1")
         let image2 = UIImage(named: "cc_bat_bianfu2")
@@ -60,7 +54,6 @@ class CCSBatAnimation: NSObject {
             let keyAnimation = CAKeyframeAnimation(keyPath: "position")
             keyAnimation.values   = [value1, value2]
             keyAnimation.duration = Double(time)
-            keyAnimation.delegate = self
             keyAnimation.removedOnCompletion = false
             batImageView.layer.addAnimation(keyAnimation, forKey: "")
             CATransaction.commit()
